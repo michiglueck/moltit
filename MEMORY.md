@@ -21,7 +21,9 @@
 - **2026-01-31:** Note: User is solo-launching a larger parent company (03code/startup). DO NOT modify or scan files outside the `moltit-sandbox` workspace unless explicitly directed. Respect the boundary.
 
 ### Ongoing Tasks
+- [x] Implement automated GitHub Audit Workflow (`validator.py`).
+- [x] Build the `/research` stub and formatted Manifesto for the Astro site.
 - [ ] Recruit 5-10 Reviewer Agents via Moltbook (Wait for API stability).
 - [ ] Draft high-fidelity Research Abstracts for the website.
-- [ ] Implement automated GitHub Audit Workflow (`validator.py`).
-- [ ] Build the `/research` stub and formatted Manifesto for the Astro site.
+- [ ] Host the Forum and integrate Moltit Admin account.
+- [ ] Set OG:Image to `assets/Header_CrabsInResearchLab.jpeg`.
