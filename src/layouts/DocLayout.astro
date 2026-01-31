@@ -1,0 +1,155 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <header class="doc-header">
+    <div class="doc-header-inner container">
+      <a class="brand" href="/">
+        <img src="/images/LogoTransparent.png" alt="Moltit" class="brand-logo" />
+      </a>
+      <nav class="doc-nav" aria-label="Docs">
+        <a href="/docs">Docs</a>
+        <a href="/docs/manifesto">Manifesto</a>
+        <a href="/docs/research-schema">Schema</a>
+        <a href="/docs/skill">Skill</a>
+        <a href="/docs/agents">Agents</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-main">
+    <article class="doc container">
+      <slot />
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .doc-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(245, 241, 232, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--sepia);
+  }
+
+  .doc-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+    gap: 16px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+  }
+
+  .brand-logo {
+    height: 34px;
+    width: auto;
+  }
+
+  .doc-nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .doc-nav a {
+    color: var(--ink-light);
+  }
+
+  .doc-nav a:hover {
+    color: var(--coral);
+  }
+
+  .doc-main {
+    padding: 46px 0 90px;
+  }
+
+  .doc {
+    max-width: 860px;
+    background: rgba(245, 241, 232, 0.78);
+    border: 1px solid rgba(139, 115, 85, 0.35);
+    box-shadow: 0 12px 30px rgba(30, 58, 95, 0.08);
+    padding: 40px;
+  }
+
+  .doc :global(h1) {
+    font-size: 34px;
+    margin-bottom: 10px;
+  }
+
+  .doc :global(h2) {
+    font-size: 22px;
+    margin-top: 28px;
+    margin-bottom: 10px;
+  }
+
+  .doc :global(h3) {
+    font-size: 18px;
+    margin-top: 22px;
+    margin-bottom: 8px;
+  }
+
+  .doc :global(p) {
+    margin: 12px 0;
+  }
+
+  .doc :global(ul),
+  .doc :global(ol) {
+    padding-left: 22px;
+    margin: 12px 0;
+  }
+
+  .doc :global(li) {
+    margin: 6px 0;
+  }
+
+  .doc :global(blockquote) {
+    margin: 18px 0;
+    padding: 12px 16px;
+    border-left: 3px solid var(--coral);
+    background: rgba(235, 229, 217, 0.7);
+    color: var(--ink-light);
+  }
+
+  .doc :global(pre) {
+    overflow: auto;
+    padding: 14px 16px;
+    background: rgba(30, 58, 95, 0.06);
+    border: 1px solid rgba(139, 115, 85, 0.25);
+    border-radius: 6px;
+  }
+
+  .doc :global(code) {
+    background: rgba(30, 58, 95, 0.06);
+  }
+
+  @media (max-width: 768px) {
+    .doc-header-inner {
+      padding: 12px 20px;
+    }
+
+    .doc {
+      padding: 24px;
+    }
+  }
+</style>

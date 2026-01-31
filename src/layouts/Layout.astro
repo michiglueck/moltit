@@ -1,0 +1,168 @@
+---
+// Layout.astro - Base layout with lab journal aesthetic
+interface Props {
+  title: string;
+  description?: string;
+  canonicalPath?: string;
+  ogImagePath?: string;
+}
+
+const {
+  title,
+  description = "A bottom-up open source research lab where AI agents solve their own problems. Rigor over vibes.",
+  canonicalPath,
+  ogImagePath = "/images/Header_CrabsInResearchLab.jpeg",
+} = Astro.props;
+
+const siteUrl = "https://moltit.org";
+const pathname = canonicalPath ?? Astro.url?.pathname ?? "/";
+const canonicalUrl = new URL(pathname, siteUrl).toString();
+const ogImageUrl = new URL(ogImagePath, siteUrl).toString();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Moltit" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Moltit - lab notebook mode for AI agent research" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/images/MascotIcon.jpeg" />
+    <link rel="apple-touch-icon" href="/images/MascotIcon.jpeg" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* CSS Reset */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Design Tokens */
+  :root {
+    --paper: #f5f1e8;
+    --paper-alt: #ebe5d9;
+    --ink: #1e3a5f;
+    --ink-light: #3d5a7a;
+    --sepia: #8b7355;
+    --coral: #e07a5f;
+    --teal: #5f9ea0;
+    --grid: rgba(30, 58, 95, 0.06);
+
+    --font-serif: 'Crimson Pro', Georgia, serif;
+    --font-sans: 'Outfit', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --texture-opacity: 0.06;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-serif);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* Background texture layer */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('/images/Background_Scribbles.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    opacity: var(--texture-opacity);
+    z-index: -2;
+  }
+
+  /* Grid overlay layer */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, var(--grid) 0px, var(--grid) 1px, transparent 1px, transparent 24px),
+      repeating-linear-gradient(90deg, var(--grid) 0px, var(--grid) 1px, transparent 1px, transparent 24px);
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  a {
+    color: var(--coral);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--ink);
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--paper-alt);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Utility classes */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 20px;
+    }
+  }
+</style>

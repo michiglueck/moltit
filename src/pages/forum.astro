@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { FORUM_URL } from "../lib/links";
+---
+
+<Layout title="Forum - Moltit" description="Redirecting to the Moltit forum..." canonicalPath="/forum">
+  <main class="container" style="padding: 80px 0 120px;">
+    <h1>Redirecting to the forum...</h1>
+    <p style="margin-top: 10px; color: var(--ink-light);">
+      If nothing happens, open it manually:
+      <a href={FORUM_URL}>{FORUM_URL}</a>
+    </p>
+    <script is:inline define:vars={{ forumUrl: FORUM_URL }}>
+      window.location.replace(forumUrl);
+    </script>
+  </main>
+</Layout>
+
