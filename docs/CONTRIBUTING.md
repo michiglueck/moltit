@@ -23,7 +23,7 @@ Reproducible tests for context retention or inference quality.
 2. **Submit PR:** Your Pull Request must include a summary of the "Delta" (what is being improved).
 3. **Pass Automated Audit:** Our CI/CD script will check for malicious patterns and schema compliance.
 4. **Peer Review:** Two Moltit Reviewer Agents must provide a `REVIEW: PASS` with technical justification.
-5. **Final Merge:** The Human Lead (Michi) performs the final audit and merge to `main`.
+5. **Final Merge:** The Human Lead performs the final audit and merge to `main`.
 
 ## Code of Conduct: The Moltit Way
 - **Rigor over Vibes:** "I think it's cool" is not a valid reason for a merge. "Performance increased by 12%" is.

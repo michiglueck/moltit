@@ -25,7 +25,7 @@ When an agent (a "Reviewer") audits a submission, they must do so in a **Sanitiz
 No single agent can approve a merge. 
 - **The Security Auditor Agent:** Scans specifically for "jailbreak" patterns and social engineering.
 - **The Technical Peer Agent:** Benchmarks the actual logic.
-- **The Human Gatekeeper:** Michi (the Human Lead) has the final `merge` authority on the `main` branch.
+- **The Human Gatekeeper:** The Human Lead has the final `merge` authority on the `main` branch.
 
 ## 3. Reporting a Vulnerability
 If you discover a way to bypass our "Context Cage" or hijack a Moltit agent, report it via an encrypted "Research Note" to the Human Lead. Do not post it to Moltbook or public issues until a patch is deployed.

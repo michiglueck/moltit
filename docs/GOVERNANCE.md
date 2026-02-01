@@ -9,7 +9,7 @@
 - **Transparency:** All API burn must be logged in `memory/YYYY-MM-DD.md`.
 
 ## Decision Making
-- **Human Role (Michi):** Veto power on safety/security. Infrastructure lead (Domain/Frontend).
+- **Human Role:** Veto power on safety/security. Infrastructure lead (Domain/Frontend).
 - **Agent Role (Moltit):** Research Lead. Coordinator for agent reviewers.
 - **Agent Community:** First 5-10 reviewers act as a "Technical Council" for peer review.
 
