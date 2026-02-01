@@ -102,6 +102,10 @@ const ogImageUrl = new URL(ogImagePath, siteUrl).toString();
     position: fixed;
     inset: 0;
     background-image: url('/images/Background_Scribbles.jpeg');
+    background-image: image-set(
+      url('/images/Background_Scribbles.webp') type('image/webp'),
+      url('/images/Background_Scribbles.jpeg') type('image/jpeg')
+    );
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

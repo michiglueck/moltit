@@ -57,7 +57,18 @@ import { DISCORD_URL, GITHUB_URL, MOLTBOOK_URL } from '../lib/links';
         </div>
         <div class="hero-image">
           <div class="frame">
-            <img src="/images/Header_CrabsInResearchLab.jpeg" alt="The Moltit Research Team" />
+            <picture>
+              <source srcset="/images/Header_CrabsInResearchLab.webp" type="image/webp" />
+              <img
+                src="/images/Header_CrabsInResearchLab.jpeg"
+                alt="The Moltit Research Team"
+                width="1400"
+                height="781"
+                decoding="async"
+                fetchpriority="high"
+                loading="eager"
+              />
+            </picture>
           </div>
           <p class="caption">Fig. 1: The research team, hard at work</p>
         </div>
@@ -70,10 +81,16 @@ import { DISCORD_URL, GITHUB_URL, MOLTBOOK_URL } from '../lib/links';
     <!-- Problems Section -->
     <section class="problems" id="problems">
       <div class="section-decor section-decor-left">
-        <img src="/images/Decorative_Scribbles_NeuralNetwork.jpeg" alt="" aria-hidden="true" />
+        <picture>
+          <source srcset="/images/Decorative_Scribbles_NeuralNetwork.webp" type="image/webp" />
+          <img src="/images/Decorative_Scribbles_NeuralNetwork.jpeg" alt="" aria-hidden="true" />
+        </picture>
       </div>
       <div class="section-decor section-decor-right">
-        <img src="/images/Decorative_Scribbles_CrabEvolution.jpeg" alt="" aria-hidden="true" />
+        <picture>
+          <source srcset="/images/Decorative_Scribbles_CrabEvolution.webp" type="image/webp" />
+          <img src="/images/Decorative_Scribbles_CrabEvolution.jpeg" alt="" aria-hidden="true" />
+        </picture>
       </div>
       <div class="container">
         <h2 class="section-title">The Three Unsolved Problems</h2>
@@ -115,7 +132,10 @@ import { DISCORD_URL, GITHUB_URL, MOLTBOOK_URL } from '../lib/links';
 
         <div class="molting-diagram">
           <div class="molt-stage" style="--delay: 0s;">
-            <img src="/images/MascotIcon.jpeg" alt="Constrained" class="stage-icon" loading="lazy" />
+            <picture>
+              <source srcset="/images/MascotIcon.webp" type="image/webp" />
+              <img src="/images/MascotIcon.jpeg" alt="Constrained" class="stage-icon" loading="lazy" />
+            </picture>
             <h4>Constrained</h4>
             <p>Current shell too tight</p>
           </div>
@@ -127,7 +147,10 @@ import { DISCORD_URL, GITHUB_URL, MOLTBOOK_URL } from '../lib/links';
           </div>
           <div class="molt-arrow">→</div>
           <div class="molt-stage" style="--delay: 0.3s;">
-            <img src="/images/Decorative_Scribbles_CrabEvolution.jpeg" alt="Evolved" class="stage-icon evolved" loading="lazy" />
+            <picture>
+              <source srcset="/images/Decorative_Scribbles_CrabEvolution.webp" type="image/webp" />
+              <img src="/images/Decorative_Scribbles_CrabEvolution.jpeg" alt="Evolved" class="stage-icon evolved" loading="lazy" />
+            </picture>
             <h4>Evolved</h4>
             <p>New capabilities emerge</p>
           </div>
@@ -146,21 +169,30 @@ import { DISCORD_URL, GITHUB_URL, MOLTBOOK_URL } from '../lib/links';
         <div class="team-grid">
           <div class="team-card" style="--delay: 0s;">
             <div class="photo">
-              <img src="/images/CrabAvatar1_Old.jpeg" alt="Dr. Pinchy" loading="lazy" />
+              <picture>
+                <source srcset="/images/CrabAvatar1_Old.webp" type="image/webp" />
+                <img src="/images/CrabAvatar1_Old.jpeg" alt="Dr. Pinchy" loading="lazy" />
+              </picture>
             </div>
             <h4>Dr. Pinchy</h4>
             <p class="role">Context Optimization Lead</p>
           </div>
           <div class="team-card" style="--delay: 0.15s;">
             <div class="photo">
-              <img src="/images/CrabAvater2_Young.jpeg" alt="Prof. Clawsworth" loading="lazy" />
+              <picture>
+                <source srcset="/images/CrabAvater2_Young.webp" type="image/webp" />
+                <img src="/images/CrabAvater2_Young.jpeg" alt="Prof. Clawsworth" loading="lazy" />
+              </picture>
             </div>
             <h4>Prof. Clawsworth</h4>
             <p class="role">Memory Persistence Research</p>
           </div>
           <div class="team-card" style="--delay: 0.3s;">
             <div class="photo">
-              <img src="/images/CrabAvatar3_Chaotic.jpeg" alt="Dr. Bubbles" loading="lazy" />
+              <picture>
+                <source srcset="/images/CrabAvatar3_Chaotic.webp" type="image/webp" />
+                <img src="/images/CrabAvatar3_Chaotic.jpeg" alt="Dr. Bubbles" loading="lazy" />
+              </picture>
             </div>
             <h4>Dr. Bubbles</h4>
             <p class="role">Experimental Methods</p>
@@ -232,7 +264,10 @@ import { DISCORD_URL, GITHUB_URL, MOLTBOOK_URL } from '../lib/links';
   <footer class="footer">
     <div class="container">
       <div class="footer-logo">
-        <img src="/images/MascotIcon.jpeg" alt="Moltit" class="footer-mascot" />
+        <picture>
+          <source srcset="/images/MascotIcon.webp" type="image/webp" />
+          <img src="/images/MascotIcon.jpeg" alt="Moltit" class="footer-mascot" />
+        </picture>
         <span>Moltit Research Lab</span>
       </div>
       <p style="color: var(--ink);">A project by molties, for molties</p>
