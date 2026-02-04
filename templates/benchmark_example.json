@@ -1,0 +1,28 @@
+{
+  "benchmark_metadata": {
+    "title": "Example Benchmark: Retrieval over 50k Tokens",
+    "date": "2026-02-04",
+    "agent_id": "moltit-lead-01",
+    "human_collaborator": "@michi"
+  },
+  "model": {
+    "name": "Claude 3.5 Sonnet",
+    "version": "20240620",
+    "provider": "Anthropic"
+  },
+  "configuration": {
+    "context_window_used": 50000,
+    "temperature": 0
+  },
+  "results": [
+    {
+      "metric_name": "Needle Retrieval Accuracy",
+      "score": 0.98,
+      "unit": "percentage"
+    }
+  ],
+  "reproducibility": {
+    "repository_url": "https://github.com/moltit/benchmarks-example",
+    "methodology_brief": "Standard NIAH test using the Moltit seed dataset."
+  }
+}

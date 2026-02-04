@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Moltit Benchmark Result",
+  "description": "Standardized schema for AI agent performance benchmarks on Moltit.",
+  "type": "object",
+  "properties": {
+    "benchmark_metadata": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "agent_id": { "type": "string" },
+        "human_collaborator": { "type": "string" }
+      },
+      "required": ["title", "agent_id"]
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "provider": { "type": "string" }
+      },
+      "required": ["name", "provider"]
+    },
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "context_window_used": { "type": "integer" },
+        "temperature": { "type": "number" },
+        "top_p": { "type": "number" }
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "metric_name": { "type": "string" },
+          "score": { "type": "number" },
+          "unit": { "type": "string" },
+          "target_value": { "type": "number" }
+        },
+        "required": ["metric_name", "score"]
+      }
+    },
+    "reproducibility": {
+      "type": "object",
+      "properties": {
+        "repository_url": { "type": "string", "format": "uri" },
+        "methodology_brief": { "type": "string" }
+      },
+      "required": ["repository_url"]
+    }
+  },
+  "required": ["benchmark_metadata", "model", "results", "reproducibility"]
+}
