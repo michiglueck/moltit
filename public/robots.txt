@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moltit.org/sitemap.xml
